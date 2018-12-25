@@ -1,16 +1,32 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 @click="changeTitle()">{{ title }}</h1>
   </header>
 </template>
 
 <script>
 
+import { bus } from '../main';
+
 export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    }
+  },
   data() {
     return {
-      title: 'Vue Ninjas',
+      // title: 'Vue Ninjas',
     }
+  },
+
+  methods: {
+    changeTitle() {
+      // this.$emit('updateTitle', "Vue Wizard")
+      // this.title = "Vue Wizard"
+      bus.$emit('titleUpdate', "Vue Wizard")
+    },
   },
 }
 

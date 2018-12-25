@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header/>
-      <app-ninjas :ninjas="ninjas"/>
-    <app-footer/>
+    <app-header :title="title" @updateTitle="newTitle"/>
+    <app-ninjas :ninjas="ninjas"/>
+    <app-footer :title="title"/>
   </div>
 </template>
 
@@ -29,7 +29,14 @@ export default {
         {name: 'Kami', speciality: 'Webpack', show: false},
         {name: 'Yoshi', speciality: 'Data Diggin', show: false}
       ],
+
+      title: 'Vue Ninjas',
     }
+  },
+  methods: {
+    newTitle(t) {
+      this.title = t
+    },
   },
 }
 
