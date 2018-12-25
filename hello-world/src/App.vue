@@ -1,29 +1,32 @@
 <template>
   <div>
-    <h2> Hello {{ name }} </h2>
-    <p>{{ gretting() }}</p>
-    <HelloWorld msg="Hello world"/>
+    <h1> {{ title }} </h1>
+    <ninjas :name="myname"/>
+    <ninjasCopy :numbers="numbers" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import NinjasCopy from '@/components/NinjasCopy.vue'
 
 export default {
+  components: {
+    ninjasCopy: NinjasCopy,
+  },
+
   data() {
     return {
-      name: 'Rishi',
+      title: 'Ninjas App',
+      myname: 'Rishi',
+      numbers: [1, 2, 3],
     }
   },
 
-  methods: {
-    gretting() {
-      return "Welcome to vuejs tutorial"
-    }
-  },
-
-  components: {
-    HelloWorld: HelloWorld
-  }
 }
 </script>
+
+<style scoped>
+h1 {
+  color: purple;
+}
+</style>
