@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div>
+      <p>{{ msg }}</p>
+    </div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -8,6 +11,17 @@
   </div>
 </template>
 
+<script>
+export default {
+  /* eslint-disable */
+  name: "Hello",
+  data() {
+    return {
+      msg: "Hello rishi"
+    }
+  }
+};
+</script>
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
