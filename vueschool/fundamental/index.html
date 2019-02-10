@@ -7,16 +7,33 @@
     <title>ShoppingList</title>
   </head>
   <body>
-    <div id="shopping-list"><h1>Hello {{ header }}</h1></div>
+    <div id="shopping-list">
+      <h1>Hello {{ header.toLocaleUpperCase() }}</h1>
+      <input
+        type="text"
+        v-model="newItem"
+        placeholder="Add an item"
+        @keyup.enter="saveItem()"
+      />
+      <li v-for="(item, index) in items" :key="index">{{ item }}</li>
+      <button @click="saveItem()" disabled>Save</button>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-      var shoppingList = new Vue({
-        el: "shopping-list",
+      new Vue({
+        el: "#shopping-list",
         data: {
-          header: "Vue is ready"
+          header: "ShoppingList app",
+          items: ["itemA", "itemB"],
+          newItem: ""
+        },
+        methods: {
+          saveItem() {
+            this.items.push(this.newItem);
+          }
         }
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </body>
 </html>
