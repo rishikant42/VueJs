@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ShoppingList</title>
+  </head>
+  <body>
+    <div id="shopping-list"><h1>Hello {{ header }}</h1></div>
+
+    <script>
+      var shoppingList = new Vue({
+        el: "shopping-list",
+        data: {
+          header: "Vue is ready"
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </body>
+</html>
