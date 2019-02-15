@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <br />
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+      <br />
+      <span v-bind:title="message">
+      <span v-if="seen">Now you see me</span>
+
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+
+      <input v-model="message">
+      <button v-on:click="reverseMessage">Reverse Message</button>
+
+      <ol>
+        <todo-item
+          v-for="(item, key) in todos"
+          v-bind:todo="item"
+          v-bind:key="key"
+          ></todo-item>
+      </ol>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
