@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="app" >
+       <button v-on:click="counter += 1">Add 1</button>
+       <p>The button above has been clicked {{ counter }} times.</p>
+       <button v-on:click.once="greet">Greet</button>
+
+         <button v-on:click="say('hi')">Say hi</button>
+         <button v-on:click="say('what')">Say what</button>
+
+         <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+           Submit
+         </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
