@@ -17,8 +17,24 @@ var app = new Vue({
     },
     warn(message, event) {
       // now we have access to the native event
-      if (event) event.preventDefault()
+      if (event) {
+        console.log(event);
+        event.preventDefault()
+      }
       alert(message)
-  }
+    },
+    testPreventDefault(e) {
+      // use of js
+      e.preventDefault()
+    },
+
+    testPrevent(e) {
+      // vue method
+      console.log("prevent");
+    },
+
+    testOnce(e) {
+      console.log("Once");
+    },
   }
 })
