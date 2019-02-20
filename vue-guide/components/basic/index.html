@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="app" >
+      <btn-counter></btn-counter>
+      <btn-counter></btn-counter>
+
+      <blog-post title="My journey with Vue"></blog-post>
+      <blog-post title="Blogging with Vue"></blog-post>
+      <blog-post title="Why Vue is so fun"></blog-post>
+
+      <blog-post :title="title"></blog-post>
+
+      <blog-post
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+        ></blog-post>
+
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <bg-post
+          v-for="post in newposts"
+          :key="post.id"
+          :post="post"
+          v-on:enlarge-text="onEnlargeText"
+          ></bg-post>
+      </div>
+
+      <input v-model="searchText">
+
+      <input
+        v-bind:value="searchText"
+        v-on:input="searchText = $event.target.value"
+        >
+        <h1>{{ searchText }} </h1>
+
+        <custom-input
+          v-bind:value="searchText"
+          v-on:input="searchText = $event"
+          ></custom-input>
+
+        <custom-input v-model="searchText"></custom-input>
+
+
+        <alert-box>
+          Something bad happened.
+        </alert-box>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
