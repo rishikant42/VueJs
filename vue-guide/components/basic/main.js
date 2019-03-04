@@ -1,4 +1,4 @@
-Vue.component('btn-counter', {
+Vue.component('btnCounter', {
   data() {
     return {
       count: 0,
@@ -7,7 +7,7 @@ Vue.component('btn-counter', {
   template: '<button @click="count++"> count: {{ count }} </button>'
 })
 
-Vue.component('blog-post', {
+Vue.component('blogPost', {
   props: ['title'],
   template: '<h3>{{ title }}</h3>'
 })
